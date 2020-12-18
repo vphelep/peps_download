@@ -189,7 +189,7 @@ else:
     parser.add_option("-n", "--no_download", dest="no_download", action="store_true",
                       help="Do not download products, just print curl command", default=False)
     parser.add_option("-d", "--start_date", dest="start_date", action="store", type="string",
-                      help="start date, fmt('2015-12-22')", default=(datetime.datetime.now() - datetime.timedelta(days=7)).date().strftime('%Y-%m-%d'))
+                      help="start date, fmt('2015-12-22')", default=(datetime.datetime.now() - datetime.timedelta(days=8)).date().strftime('%Y-%m-%d'))
     parser.add_option("-t", "--tile", dest="tile", action="store", type="string",
                       help="Sentinel-2 tile number", default=None)
     parser.add_option("--lat", dest="lat", action="store", type="float",
@@ -207,7 +207,7 @@ else:
     parser.add_option("-o", "--orbit", dest="orbit", action="store", type="int",
                       help="Orbit Path number", default=None)
     parser.add_option("-f", "--end_date", dest="end_date", action="store", type="string",
-                      help="end date, fmt('2015-12-23')", default='9999-01-01')
+                      help="end date, fmt('2015-12-23')", default=(datetime.datetime.now() - datetime.timedelta(days=1)).date().strftime('%Y-%m-%d'))
     parser.add_option("--json", dest="search_json_file", action="store", type="string",
                       help="Output search JSON filename", default=None)
     parser.add_option("--windows", dest="windows", action="store_true",
