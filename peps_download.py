@@ -7,7 +7,7 @@ import os.path
 import optparse
 import sys
 import zipfile
-from datetime import date
+import datetime
 
 ###########################################################################
 
@@ -189,7 +189,7 @@ else:
     parser.add_option("-n", "--no_download", dest="no_download", action="store_true",
                       help="Do not download products, just print curl command", default=False)
     parser.add_option("-d", "--start_date", dest="start_date", action="store", type="string",
-                      help="start date, fmt('2015-12-22')", default=None)
+                      help="start date, fmt('2015-12-22')", default=(datetime.datetime.now() - datetime.timedelta(days=7)).date().strftime('%Y-%m-%d'))
     parser.add_option("-t", "--tile", dest="tile", action="store", type="string",
                       help="Sentinel-2 tile number", default=None)
     parser.add_option("--lat", dest="lat", action="store", type="float",
