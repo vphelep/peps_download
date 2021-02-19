@@ -48,15 +48,23 @@ os.chdir('/home/sarproz/Documents/auto_dl/')
 f = open('download.out', 'w')
 f.write('====================================\n')
 f.write('Sent-1 download from: '+ date1 + ' to: ' + date2 + '\n')
-f.write('====================================\n \n')
+f.write('\n====================================\n \n')
 
 
 ## Download of the different tracks here
-#os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /home/sarproz/Documents/auto_dl/test_dl -p SLC --sat S1B -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
-#summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 404')
+f.write('====================================\n')
+f.write('Track 139 \n')
+f.write('====================================\n')
 
-os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /home/sarproz/Documents/auto_dl/test_dl -p SLC --sat S1A -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1A_401 -p SLC --sat S1A -m IW -o 139 -x -l Aalborg > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 139 401')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1A_406 -p SLC --sat S1A -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 139 406')
+
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1B_399 -p SLC --sat S1A -m IW -o 139 -x --lat 57.72137 --lon 10.58471 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 399')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1B_404 -p SLC --sat S1B -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 404')
 
 f.close()
 
