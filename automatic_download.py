@@ -79,8 +79,9 @@ message['Subject'] = 'S1 data download'   #The subject line
 
 with open('download.out') as fp:
     # Create a text/plain message
-    message = MIMEText(fp.read())
+    messageTXT = MIMEText(fp.read())
 
+message.attach(MIMEText(messageTXT, 'plain'))
 #Create SMTP session for sending the mail
 session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
 session.starttls() #enable security
