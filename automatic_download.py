@@ -35,7 +35,7 @@ def summary_writting(file_name, string_to_search,file,title):
         file.write('no data downloaded')
     else:
         for elem in matched_lines:
-            print(elem[1])
+            file.write(elem[1])
 
 
 line_search = 'product saved as :'
@@ -52,8 +52,8 @@ f.write('====================================\n \n')
 
 
 ## Download of the different tracks here
-os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /home/sarproz/Documents/auto_dl/test_dl -p SLC --sat S1B -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
-summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 404')
+#os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /home/sarproz/Documents/auto_dl/test_dl -p SLC --sat S1B -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+#summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 404')
 
 os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /home/sarproz/Documents/auto_dl/test_dl -p SLC --sat S1A -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 139 406')
