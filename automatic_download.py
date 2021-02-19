@@ -71,7 +71,7 @@ message = MIMEMultipart()
 message['From'] = sender_address
 message['To'] = receiver_address
 #message['Subject'] = 'Track ' + track + ' finished processing'   #The subject line
-message['Subject'] = 'S1 data download'   #The subject line
+
 
 # The body and the attachments for the mail
 
@@ -79,9 +79,9 @@ message['Subject'] = 'S1 data download'   #The subject line
 
 with open('download.out') as fp:
     # Create a text/plain message
-    messageTXT = MIMEText(fp.read())
+    message = MIMEText(fp.read())
 
-message.attach(MIMEText(messageTXT, 'plain'))
+message['Subject'] = 'S1 data download'   #The subject line
 #Create SMTP session for sending the mail
 session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
 session.starttls() #enable security
