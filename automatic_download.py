@@ -43,6 +43,8 @@ line_search = 'product saved as :'
 date1 = (datetime.datetime.now() - datetime.timedelta(days=8)).date().strftime('%Y-%m-%d')
 date2 = (datetime.datetime.now() - datetime.timedelta(days=1)).date().strftime('%Y-%m-%d')
 
+
+os.chdir('/home/sarproz/Documents/auto_dl/')
 f = open('download.out', 'w')
 f.write('====================================\n')
 f.write('Sent-1 download from: '+ date1 + ' to: ' + date2 + '\n')
