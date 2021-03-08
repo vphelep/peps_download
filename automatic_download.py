@@ -32,7 +32,7 @@ def summary_writting(file_name, string_to_search,file,title):
     file.write(title + ': \n')
     matched_lines = search_string_in_file(file_name,string_to_search)
     if len(matched_lines) == 0:
-        file.write('no data downloaded')
+        file.write('no data downloaded\n')
     else:
         for elem in matched_lines:
             file.write(elem[1])
