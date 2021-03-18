@@ -36,6 +36,7 @@ def summary_writting(file_name, string_to_search,file,title):
     else:
         for elem in matched_lines:
             file.write(elem[1])
+            file.write('\n')
 
 
 line_search = 'product saved as :'
@@ -48,12 +49,12 @@ os.chdir('/home/sarproz/Documents/auto_dl/')
 f = open('download.out', 'w')
 f.write('====================================\n')
 f.write('Sent-1 download from: '+ date1 + ' to: ' + date2 + '\n')
-f.write('\n====================================\n \n')
+f.write('====================================\n \n')
 
 
 ## Download of the different tracks here
 f.write('====================================\n')
-f.write('Track 139 \n')
+f.write('== Track 139  \n')
 f.write('====================================\n')
 
 os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1A_401 -p SLC --sat S1A -m IW -o 139 -x -l Aalborg > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
@@ -65,6 +66,14 @@ os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/pep
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 399')
 os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_139/S1B_404 -p SLC --sat S1B -m IW -o 139 -x -l Aarhus > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 139 404')
+
+f.write('\n====================================\n')
+f.write('== Track 66 \n')
+f.write('====================================\n')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_66/S1A_409 -p SLC --sat S1A -m IW -o 66 -x --lat 55.433012 --lon 11.553367 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 66 409')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_66/S1A_409 -p SLC --sat S1B -m IW -o 66 -x --lat 55.433012 --lon 11.553367 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 66 406')
 
 f.close()
 
