@@ -72,6 +72,8 @@ f.write('== Track 66 \n')
 f.write('====================================\n')
 os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_66/S1A_409 -p SLC --sat S1A -m IW -o 66 -x --lat 55.433012 --lon 11.553367 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 66 409')
+os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_66/S1A_404 -p SLC --sat S1A -m IW -o 66 -x --lat  55.779343 --lon 12.526074 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
+summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1A 66 404')
 os.system('/home/sarproz/miniconda3/bin/python /home/sarproz/PycharmProjects/peps_download/peps_download.py -a /home/sarproz/PycharmProjects/peps_download/peps.txt -c S1 -w /data1/TRACK_66/S1A_409 -p SLC --sat S1B -m IW -o 66 -x --lat 55.433012 --lon 11.553367 > /home/sarproz/Documents/auto_dl/cron.log 2>&1')
 summary_writting('/home/sarproz/Documents/auto_dl/cron.log',line_search,f,'S1B 66 406')
 
